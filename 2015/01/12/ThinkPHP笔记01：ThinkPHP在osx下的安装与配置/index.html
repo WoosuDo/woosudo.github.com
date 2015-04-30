@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ThinkPHP笔记01：ThinkPHP在osx下的安装与配置 | woosUdo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ThinkPHP是最著名的国产PHP框架。因为它上手难度低，且文档和注释全部是中文，所以受到了大批PHPer的喜爱。
+Thinkphp 3.2官方手册
+ThinkPHP讲解 by @LAMP兄弟连
+下载ThinkPHP推荐从GitHub获取ThinkPHP：
+git clone https://github.com/liu21st/thinkphp.git
+以便随时能通过
+git pull
+保持最">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ThinkPHP笔记01：ThinkPHP在osx下的安装与配置">
+<meta property="og:url" content="http://woosudo.com/2015/01/12/ThinkPHP笔记01：ThinkPHP在osx下的安装与配置/index.html">
+<meta property="og:site_name" content="woosUdo">
+<meta property="og:description" content="ThinkPHP是最著名的国产PHP框架。因为它上手难度低，且文档和注释全部是中文，所以受到了大批PHPer的喜爱。
+Thinkphp 3.2官方手册
+ThinkPHP讲解 by @LAMP兄弟连
+下载ThinkPHP推荐从GitHub获取ThinkPHP：
+git clone https://github.com/liu21st/thinkphp.git
+以便随时能通过
+git pull
+保持最">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ThinkPHP笔记01：ThinkPHP在osx下的安装与配置">
+<meta name="twitter:description" content="ThinkPHP是最著名的国产PHP框架。因为它上手难度低，且文档和注释全部是中文，所以受到了大批PHPer的喜爱。
+Thinkphp 3.2官方手册
+ThinkPHP讲解 by @LAMP兄弟连
+下载ThinkPHP推荐从GitHub获取ThinkPHP：
+git clone https://github.com/liu21st/thinkphp.git
+以便随时能通过
+git pull
+保持最">
+  
+    <link rel="alternative" href="/atom.xml" title="woosUdo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://woosudo.qiniudn.com/author.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">brAn</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我的征途是冷笑话和星辰大海</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/随笔">随笔</a></li>
+				        
+							<li><a href="/categories/笔记">笔记</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/WoosuDo" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/woosudo" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/wooto" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/52663712/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a><a href="/tags/ThinkPHP/" style="font-size: 10px;">ThinkPHP</a><a href="/tags/osx/" style="font-size: 10px;">osx</a><a href="/tags/前端/" style="font-size: 20px;">前端</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">曾经互联网公司运营一只，懂点设计，会点代码。现离职考公务员中。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">brAn</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://woosudo.qiniudn.com/author.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">brAn</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我的征途是冷笑话和星辰大海</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/随笔">随笔</a></li>
+		        
+					<li><a href="/categories/笔记">笔记</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/WoosuDo" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/woosudo" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/wooto" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/52663712/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-ThinkPHP笔记01：ThinkPHP在osx下的安装与配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/01/12/ThinkPHP笔记01：ThinkPHP在osx下的安装与配置/" class="article-date">
+  	<time datetime="2015-01-12T05:02:01.000Z" itemprop="datePublished">2015-01-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ThinkPHP笔记01：ThinkPHP在osx下的安装与配置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ThinkPHP/">ThinkPHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/笔记/">笔记</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ThinkPHP是最著名的国产PHP框架。因为它上手难度低，且文档和注释全部是中文，所以受到了大批PHPer的喜爱。</p>
+<p><a href="http://document.thinkphp.cn/manual_3_2.html" target="_blank" rel="external">Thinkphp 3.2官方手册</a></p>
+<p><a href="http://study.163.com/course/courseMain.htm?courseId=266024" target="_blank" rel="external">ThinkPHP讲解</a> by <a href="http://study.163.com/u/lampbrother" target="_blank" rel="external">@LAMP兄弟连</a></p>
+<h2 id="下载ThinkPHP">下载ThinkPHP</h2><p>推荐从GitHub获取ThinkPHP：</p>
+<pre><code>git clone <span class="string">https:</span><span class="comment">//github.com/liu21st/thinkphp.git</span>
+</code></pre><p>以便随时能通过</p>
+<pre><code><span class="title">git</span> pull
+</code></pre><p>保持最新版本。</p>
+<p>不过……鉴于国内最近（2015年1月）GitHub由于众所周知的某些原因难以访问，所以还是在官网<a href="http://www.thinkphp.cn/" target="_blank" rel="external">ThinkPHP框架 | 中文最佳实践PHP开源框架,专注WEB应用快速开发8年！</a>下吧。&gt;_&lt;</p>
+<a id="more"></a>
+<h2 id="OSX下PHP环境的配置">OSX下PHP环境的配置</h2><p>程序猿对OSX的热爱，很大程度上来自于其开发环境配置的简便。OSX(Yosemite)上自带了PHP和Apache。通过</p>
+<pre><code>php <span class="comment">--version</span>
+</code></pre><p>可以查看当前系统内的PHP版本。Thinkphp支持5.2.x以上版本的PHP。</p>
+<p>通过</p>
+<pre><code><span class="title">sudo</span> apachectl -v
+</code></pre><p>则可以查看当前系统内的Apache版本。通过</p>
+<pre><code>sudo apachectl <span class="built_in">start</span>
+</code></pre><p>可以开启Apache服务器。如果成功，可以在<a href="localhost">本地服务器</a>上看到<strong>It works</strong>字样。但此时仍然不能运行PHP脚本，必须先通过</p>
+<pre><code>sudo <span class="keyword">vim</span> /etc/apache2/httpd.<span class="keyword">conf</span>
+</code></pre><p>编辑Apache的配置文件，找到</p>
+<pre><code><span class="comment">#LoadModule php5_module libexec/apache2/libphp5.so</span>
+</code></pre><p>将前边的#去掉。然后</p>
+<pre><code><span class="title">sudo</span> apachectl restart
+</code></pre><p>重新启动Apache，就能正常运行PHP了。运行</p>
+<pre><code>cp <span class="regexp">/Library/</span>WebServer<span class="regexp">/Documents/i</span>ndex.html.en <span class="regexp">/Library/</span>WebServer<span class="regexp">/Documents/i</span>nfo.php
+</code></pre><p>即在Apache的根目录下复制index.html.en文件并重命名为info.php，编辑info.php，在It works后加入代码</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> phpinfo(); <span class="preprocessor">?&gt;</span></span>
+</code></pre><p> 再访问localhost/info.php，如果配置正确，即可看到本机PHP的相关信息。</p>
+<p> 通过</p>
+<pre><code>sudo apchectl <span class="keyword">stop</span>
+</code></pre><p>可以关闭Apache服务器。</p>
+<p>Yosemite没有自带Mysql，可以通过homebrew等方式进行安装，此处不再赘言。</p>
+<h2 id="ThinkPHP的安装与配置">ThinkPHP的安装与配置</h2><p>ThinkPHP是不需要安装的，直接放置在Web服务器的响应文件夹下即可。</p>
+<h3 id="前台文件生成">前台文件生成</h3><p>这里选择Apache的Web Content目录，即：</p>
+<pre><code><span class="keyword">cd</span> /Library/WebServer/Documents
+<span class="keyword">mkdir</span> <span class="keyword">test</span>
+</code></pre><p>然后将ThinkPHP的工程文件复制进test文件夹。启动Apache服务器，访问<a href="http://localhost/test" target="_blank" rel="external">http://localhost/test</a> ，此时会提示./Application文件夹没有足够权限。这是用户默认对该文件夹没有写权限造成的。通过</p>
+<pre><code>sudo chmod <span class="literal">a</span>+w ./Application
+</code></pre><p>赋予该文件夹写权限，重新访问<a href="http://localhost/test，配置正确的话，就能看到ThinkPHP的经典笑脸了：" target="_blank" rel="external">http://localhost/test，配置正确的话，就能看到ThinkPHP的经典笑脸了：</a></p>
+<pre><code><span class="pseudo">:)</span>
+欢迎使用 <span class="tag">ThinkPHP</span>！
+
+版本 <span class="tag">V3</span><span class="class">.2</span><span class="class">.3</span>
+</code></pre><p>访问成功后，ThinkPHP同时也会自动生成前台文件夹./Home/ 。</p>
+<h3 id="后台文件生成">后台文件生成</h3><p>复制应用根目录下的index.php文件，重命名为admin.php，用以下内容替换文件内的代码：</p>
+<pre><code><span class="keyword">if</span>(version_compare(PHP_VERSION,<span class="string">'5.3.0'</span>,<span class="string">'&lt;'</span>))  die(<span class="string">'require PHP &gt; 5.3.0 !'</span>);
+
+<span class="class"><span class="keyword">define</span></span>(<span class="string">'BIND_MODULE'</span>,<span class="string">'Admin'</span>);
+
+<span class="comment">// 定义应用目录</span>
+<span class="class"><span class="keyword">define</span></span>(<span class="string">'APP_PATH'</span>,<span class="string">'./Application/'</span>);
+
+<span class="comment">// 引入ThinkPHP入口文件</span>
+<span class="keyword">require</span> <span class="string">'./ThinkPHP/ThinkPHP.php'</span>;
+</code></pre><p>保存文件，然后访问<a href="http://localhost/admin.php" target="_blank" rel="external">http://localhost/admin.php</a> ，若配置正确，仍然显示经典的笑脸。此时ThinkPHP会自动生成后台文件夹./Admin/ 。</p>
+<h2 id="ThinkPHP的url访问">ThinkPHP的url访问</h2><p>ThinkPHP采用的依然是MVC架构，V访问C通常有4种方法，最常用的就是通过url访问。我们打开<a href="http://localhost/test" target="_blank" rel="external">http://localhost/test</a> ，完整的路径应该是</p>
+<pre><code>http://localhost/test/<span class="built_in">index</span>.php/Home/<span class="built_in">Index</span>/<span class="built_in">index</span>
+</code></pre><p>注意：在很多视频教学中，上述路径是这样的：</p>
+<pre><code>http://localhost/test/<span class="built_in">index</span>.php/<span class="built_in">Index</span>/<span class="built_in">index</span>
+</code></pre><p>如果在3.2之后的ThinkPHP中还按照这样的路径访问，就会出现错误提示：</p>
+<pre><code><span class="pseudo">:(</span>
+无法加载模块<span class="pseudo">:Index</span>
+</code></pre><p>这是3.2之后ThinkPHP的工程文件组织方式发生变化造成的。</p>
+<p>访问上述路径，可以看到和访问<a href="http://localhost/test" target="_blank" rel="external">http://localhost/test</a> 一样的效果。上述url具体格式为：</p>
+<pre><code><span class="attribute">http</span>:<span class="regexp">//</span>域名<span class="regexp">/应用名/</span>入口文件名<span class="regexp">/模块名/</span>方法名
+</code></pre><p>Index指的是Index模块，index（注意大小写）则是Index模块中的index方法，具体的定义可以在./Application/Home/Controller/IndexController.class.php中看到。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/01/08/利用sublime的snippet实现代码的自动完成/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用Sublime的Snippet实现代码的自动完成</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ThinkPHP笔记01：ThinkPHP在osx下的安装与配置" data-title="ThinkPHP笔记01：ThinkPHP在osx下的安装与配置" data-url="http://woosudo.com/2015/01/12/ThinkPHP笔记01：ThinkPHP在osx下的安装与配置/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 brAn
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
