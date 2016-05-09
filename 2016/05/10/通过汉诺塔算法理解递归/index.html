@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: 逻辑 | Woosu Land :)</title>
+  <title>通过汉诺塔算法理解递归 | Woosu Land :)</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -234,37 +234,143 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2015/05/01/初吻辩证法/">初吻辩证法</a></h4>
-                            
-                            <p><time datetime="2015-04-30T19:38:02.000Z"><a href="/2015/05/01/初吻辩证法/">2015-05-01</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-05-09T19:12:10.000Z" itemprop="datePublished">
+          2016-05-10
+      </time>
+    
+    
+    | 
+    <a href='/tags/汉诺塔/'>汉诺塔</a>,
+    
+    <a href='/tags/算法/'>算法</a>,
+    
+    <a href='/tags/递归/'>递归</a>
+    
+    
+</span>
+                <h1>通过汉诺塔算法理解递归</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p>关于递归的解释，最经典的莫过于：</p>
+<blockquote>
+<p>要向理解递归，首先你要理解递归。</p>
+</blockquote>
+<p>但这个“定义”对于麻瓜来说理解难度太大。故以经典的汉诺塔游戏为例，解释一下到底什么是递归。</p>
+<h2 id="什么是汉诺塔？">什么是汉诺塔？</h2><p>汉诺塔是一个流传已久的益智小游戏。游戏初始状态为3根立柱A、B、C，所有圆盘都按上小下大的顺序叠放在A柱上。要求将所有A柱上的圆盘移动到C柱上，过程中不允许将大的圆盘叠放在小的圆盘上，每次只能移动1个圆盘。具体可参见<a href="http://baike.baidu.com/link?url=74UzSUvt_rklWyX3hJWQ-3rrWiQrC2mgXwSsS2Xf2wvYs5qAKCJoLO0M9wMh9lQ-I2AXZUxxDSqsPZdXw7_ESq" target="_blank" rel="external">汉诺塔百度百科</a>。</p>
+<h2 id="汉诺塔算法">汉诺塔算法</h2><p>早期的电子词典上一般都会有汉诺塔这个游戏，上手容易玩起来难。很多同学都有过上课时以此来杀时间的经历。但实际上，汉诺塔的解法其实非常容易。</p>
+<p>我们的总体任务是将所有n个圆盘从A移动到C，这一任务可以分解为以下3个子任务：</p>
+<ol>
+<li>将A柱上边的n-1个圆盘移动到B；</li>
+<li>将A柱上剩余的1个圆盘移动到C；</li>
+<li>将B柱上的n-1个圆盘移动到C。</li>
+</ol>
+<p>为避免很多同学不理解形参和实参的关系，我们不妨将A、B、C换个名字来表述：</p>
+<ol>
+<li>将START柱上边的n-1个圆盘移动到MIDDLE；</li>
+<li>将START柱上剩余的1个圆盘移动到END；</li>
+<li>将MIDDLE柱上的n-1个圆盘移动到END。</li>
+</ol>
+<p>或者用白话来描述，原始任务就是将START上的n个圆盘通过MIDDLE最终全部叠放在END上。</p>
+<p>很多同学会不理解，“不允许将大的圆盘叠放在小的圆盘上”这一规则是如何通过该算法实现的。很简单，所谓将“n-1个圆盘移动到X”就保证了这一规则得以遵守，因为我们始终是将n-1个圆盘当做一个整体。即在每一次递归中，这n-1个圆盘（n每次并不一样）从初始到最后都是上小下大的。</p>
+<p>以<a ref="#3层汉诺塔示意图">3层汉诺塔示意图</a>为例：</p>
+<p><img src="http://www.myexception.cn/img/2012/08/26/203947383.gif" alt="3层汉诺塔示意图"></p>
+<p>3层的汉诺塔，求解步骤为：</p>
+<pre><code>A <span class="comment">--&gt; C</span>
+A <span class="comment">--&gt; B</span>
+C <span class="comment">--&gt; B</span>
+A <span class="comment">--&gt; C</span>
+B <span class="comment">--&gt; A</span>
+B <span class="comment">--&gt; C</span>
+A <span class="comment">--&gt; C</span>
+</code></pre><p>（不相信的同学可以自己动手试一下。）</p>
+<p>按照我们的算法：</p>
+<ul>
+<li>首先我们要将A（START）上的（3-1=）2个圆盘移动到B（MIDDLE）。</li>
+</ul>
+<p>先考虑这一步，将A上的2个圆盘移动到B这一子任务中，A充当了一个叠放有2个圆盘的START，而B则充当了END的角色，自然，C则作为MIDDLE。所以我们需要先将A（START）上的（2-1=）1个圆盘移动到C（MIDDLE）。显然，只移动1个圆盘是规则允许的，所以我们直接把A（START）最上方的1个圆盘移动到C（MIDDLE）。接着我们需要将START（A）上的剩余1个圆盘移动到END（B），再将MIDDLE（C）上的1个圆盘移动到END（B）。</p>
+<ul>
+<li><p>此时我们完成了“将A（START）上的（3-1=）2个圆盘移动到B（MIDDLE）”这一子任务。接着我们需要把A（START）上剩余的1个圆盘移动到C（END），可以直接移动。</p>
+</li>
+<li><p>算法的最后一步是将MIDDLE（B）上的（3-1=）2个圆盘移动到END（C），此时B转换角色为START，而C仍然是END，则以A为MIDDLE。</p>
+</li>
+</ul>
+<p>要将SATRT（B）上的2个圆盘移动到END（C），我们首先要将START（B）上的（2-1=）1个圆盘移动到MIDDLE（A），再将START（B）上剩余的1个圆盘移动到END（C），最后再将MIDDLE（A）上剩余的（2-1=）1个圆盘移动到END（C）。算法结束。</p>
+<h2 id="汉诺塔算法的代码描述">汉诺塔算法的代码描述</h2><p>只看汉诺塔算法的描述，可能并不能直观地理解递归，因为理论上，任何递归程序都能转化为循环程序。所以我们以代码的方式来直观地展示一下什么是递归。</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">hanoi</span><span class="params">(n, a, b, c)</span>:</span>
+    //n表示START a上圆盘的数量
+    <span class="keyword">if</span> n == <span class="number">1</span>:
+        //n为<span class="number">1</span>的时候，可以直接移动
+        print(<span class="string">'%s --&gt; %s'</span> % (a, c));
+    <span class="keyword">else</span>:
+        hanoi(n-<span class="number">1</span>, a, c, b);//先将START上的n-<span class="number">1</span>个圆盘移动到MIDDLE
+        hanoi(<span class="number">1</span>, a, b, c);//再将START上剩余的<span class="number">1</span>个圆盘移动到END
+        hanoi(n-<span class="number">1</span>, b, a, c);//最后将MIDDLE上的n-<span class="number">1</span>个圆盘移动到END
+</code></pre><p>这段代码中我们定义了一个名叫hanoi()的函数，函数拥有n、a、b、c 4个参数。当n为1时，表示当前状态下汉诺塔的START柱上只有1个圆盘，我们可以直接移动。而n不为1时，表示任务需要分解，先要处理START上的n-1个圆盘。每次任务分解，我们再次调用了hanoi()函数。</p>
+<p>具体而言：</p>
+<ol>
+<li>初始状态，函数表示为hanoi(n ,’A’, ‘B’, ‘C’);</li>
+<li>n不为1，所以执行函数的else部分：<ol>
+<li>hanoi(3-1, ‘A’, ‘C’, ‘B’);<ol>
+<li>hanoi(3-1-1, ‘A’, ‘B’, ‘C’);</li>
+<li>hanoi(1, ‘A’, ‘C’, ‘B’);</li>
+<li>hanoi(3-1-1, ‘C’, ‘A’, ‘B’)</li>
+</ol>
+</li>
+<li>hanoi(1, ‘A’, ‘B’, ‘C’);</li>
+<li>hanoi(3-1, ‘B’, ‘A’, ‘C’);<ol>
+<li>hanoi(3-1-1, ‘B’, ‘C’, ‘A’);</li>
+<li>hanoi(1, ‘B’, ‘A’, ‘C’);</li>
+<li>hanoi(3-1-1, ‘A’, ‘B’, ‘C’);</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>所有n都为1，退出递归，返回结果。</li>
+</ol>
+<h2 id="递归小结">递归小结</h2><p>像这种在函数内部调用自身的函数，我们即称之为递归函数。由汉诺塔的例子，我们可以归纳出递归函数的两个条件：</p>
+<ol>
+<li>子任务和原始任务做的是一样的事；</li>
+<li>任务不能无限地分解下去，需要有一个退出条件，在本例中即为n==1，我们将之称为递归出口。即是说，当满足退出条件时，我们的递归将会停止，然后返回结果。</li>
+</ol>
+<p>递归拥有简单、清晰的优点，但在实际应用中，开销往往难以忽视。开销问题超纲，此处不再展开。</p>
+<p>递归在计算机和数学中都有着非常广泛的应用，比如求阶乘，比如求斐波那契数列，比如树的定义与遍历，等等。有兴趣的同学可自行研究。</p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>努力让自己重新变得有趣起来。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2015/09/04/和张小猫的新家装修方案（edition-beta）/">
+        和张小猫的新家装修方案（edition-beta） →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/05/10/通过汉诺塔算法理解递归/" data-title="通过汉诺塔算法理解递归" data-url="http://woosudo.com/2016/05/10/通过汉诺塔算法理解递归/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woosudo"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
