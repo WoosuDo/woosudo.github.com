@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>利用Sublime的Snippet实现代码的自动完成 | Woosu Land :)</title>
+  <title>Tag: 字典序 | Woosu Land :)</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -234,117 +234,37 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-<section id="intro">
+
+
+<section id="services">
     <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2015-01-08T03:36:55.000Z" itemprop="datePublished">
-          2015-01-08
-      </time>
-    
-    
-    | 
-    <a href='/tags/Sublime/'>Sublime</a>,
-    
-    <a href='/tags/web开发/'>web开发</a>
-    
-    
-</span>
-                <h1>利用Sublime的Snippet实现代码的自动完成</h1>
-            </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2016/09/13/LeetCode-字典序全排列算法及实现/">LeetCode | 字典序全排列算法及实现</a></h4>
+                            
+                            <p><time datetime="2016-09-13T08:35:52.000Z"><a href="/2016/09/13/LeetCode-字典序全排列算法及实现/">2016-09-13</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h2 id="什么是Snippet？">什么是Snippet？</h2><p>Snippet在英文中是片段的意思。Sublime提供Snippet功能，让我们可以自定义自己常用的代码片段，然后通过特定的字符组合佐以Tab键完成自动补完。</p>
-<p>在前端的教学视频里经常能见到Snippet的调用。例如输入：</p>
-<pre><code>xt
-</code></pre><p>再按Tab键，Sublime就会自动补完以下代码：</p>
-<pre><code><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
-<span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">head</span>&gt;</span>
-<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    </div>
+</section> 
 
-<span class="tag">&lt;<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><p>Sublime内置了一些简单的Snippet，不过数量稀少。而像上述HTML的DOCTYPE等信息的补完，本可通过鼎鼎大名的 Zen Coding（Emmet）插件来实现，可惜的是当前版本的Zen似乎并不支持这一功能，所以我们只好自己动手。</p>
-<a id="more"></a>
-<h2 id="如何使用Snippet">如何使用Snippet</h2><p>Snippet的使用非常简单。</p>
-<p>用Shift + Command + P呼出命令行，输入snippet，即可显示现有的Snippet。</p>
-<p><img src="http://woosudo.qiniudn.com/snippet.jpg" alt="当前Snippet列表"></p>
-<p>列表右侧显示了调用对应Snippet的快捷键。如上图第一行的Snippet:html，快捷键为<strong>html,tab</strong>，即是说，只要在sublime中输入html，再按下Tab键，即可调用对应的Snippet。</p>
-<p>用户也可以通过Tools-Snippet来使用Snippet。</p>
-<h2 id="如何设置自己的Snippet">如何设置自己的Snippet</h2><p>在Tools菜单中选择New Snippet，出现如下代码：</p>
-<pre><code><span class="tag">&lt;<span class="title">snippet</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">content</span>&gt;</span><span class="cdata">&lt;![CDATA[
-        Hello, ${1:this} is a ${2:snippet}.
-    ]]&gt;</span><span class="tag">&lt;/<span class="title">content</span>&gt;</span>
-    <span class="comment">&lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt;</span>
-    <span class="comment">&lt;!-- &lt;tabTrigger&gt;hello&lt;/tabTrigger&gt; --&gt;</span>
-    <span class="comment">&lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt;</span>
-    <span class="comment">&lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;</span>
-<span class="tag">&lt;/<span class="title">snippet</span>&gt;</span>
-</code></pre><p>CDATA标签内的</p>
-<pre><code><span class="constant">Hello,</span> <span class="variable">${</span><span class="number">1</span><span class="symbol">:this</span>} is a <span class="variable">${</span><span class="number">2</span><span class="symbol">:snippet</span>}.
-</code></pre><p>即为代码片段。你可以用自己的代码片段代替它。</p>
-<p>tabTrigger标签定义了调用Snippet的快捷键，scope标签则定义了该Snippet的有效区域。上图中</p>
-<pre><code><span class="keyword">source</span>.<span class="keyword">python</span>
-</code></pre><p>表示该Snippet在以.python为扩展名的文件中生效。若想其在html文件中生效，则scope标签内应为</p>
-<pre><code><span class="type">text</span>.html
-</code></pre><p>以下是文章最初所说输入xt + Tab自动生成html DOCTYPE等信息的Snippet：</p>
-<pre><code><span class="tag">&lt;<span class="title">snippet</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">content</span>&gt;</span><span class="cdata">&lt;![CDATA[
-    &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
-    &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
-    &lt;head&gt;
-        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-
-    &lt;body&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-    ]]&gt;</span><span class="tag">&lt;/<span class="title">content</span>&gt;</span>
-    <span class="comment">&lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt;</span>
-    <span class="tag">&lt;<span class="title">tabTrigger</span>&gt;</span>xt<span class="tag">&lt;/<span class="title">tabTrigger</span>&gt;</span>
-    <span class="comment">&lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt;</span>
-    <span class="comment">&lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;</span>
-<span class="tag">&lt;/<span class="title">snippet</span>&gt;</span>
-</code></pre><p>将该文件存入默认路径，命名为<strong>htmlXT.sublime-snippet</strong>。文件名可随意设置，但扩展名必须为.sublime-snippet。</p>
-<p>重启Sublime，刚刚设置的Snippet即可正常使用。</p>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>努力让自己重新变得有趣起来。</p>
         </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/2015/01/12/ThinkPHP在osx下的安装与配置/" style="float: left;">
-        ← ThinkPHP在osx下的安装与配置
-    </a>
-    
-    
-</nav>
-
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2015/01/08/利用sublime的snippet实现代码的自动完成/" data-title="利用Sublime的Snippet实现代码的自动完成" data-url="http://woosudo.com/2015/01/08/利用sublime的snippet实现代码的自动完成/"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"woosudo"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-	 || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-</div>
     </div>
 </section>
-
-
       
 <!-- ============================ Footer =========================== -->
 
